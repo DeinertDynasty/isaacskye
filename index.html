@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Musician's Name</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .section {
+            margin: 20px;
+        }
+        .blue {
+            color: blue;
+        }
+        .purple {
+            color: purple;
+        }
+        .pink {
+            color: pink;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="section blue">
+        <h1>Musician's Name</h1>
+        <p>About me section...</p>
+    </div>
+
+    <div class="section purple">
+        <h2>My Music</h2>
+        <a href="https://soundcloud.com/chriskingrdemption" target="_blank">SoundCloud</a>
+        <a href="#" target="_blank">YouTube</a>
+    </div>
+
+    <div class="section pink">
+        <h2>Gallery</h2>
+        <div class="slideshow-container">
+            <img class="slide active" src="image1.jpg" alt="Image 1">
+            <img class="slide" src="image2.jpg" alt="Image 2">
+            <img class="slide" src="image3.jpg" alt="Image 3">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+</html>
